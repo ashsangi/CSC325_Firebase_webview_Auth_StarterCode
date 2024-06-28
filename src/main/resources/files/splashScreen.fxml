@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane prefHeight="676.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc325_firebase_webview_auth.view.splashScreenController">
+   <children>
+      <BorderPane prefHeight="676.0" prefWidth="1126.0" style="-fx-background-color: #ffffff;">
+         <center>
+            <ImageView fitHeight="672.0" fitWidth="1177.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../../../../Users/Ashraf/OneDrive/Pictures/FSC-Seal-300x300.jpg" />
+               </image>
+            </ImageView>
+         </center>
+         <bottom>
+            <Button fx:id="registerButton" mnemonicParsing="false" onAction="#register" prefHeight="25.0" prefWidth="301.0" text="Register" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

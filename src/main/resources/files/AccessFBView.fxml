@@ -1,102 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 
-<AnchorPane prefHeight="571.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc325_firebase_webview_auth.view.AccessFBView">
-   <children>
-      <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="894.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-                  <MenuItem mnemonicParsing="false" text="Register" />
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <HBox layoutX="6.0" layoutY="28.0" prefHeight="535.0" prefWidth="880.0">
-         <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="129.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <effect>
-                        <InnerShadow>
-                           <color>
-                              <Color red="0.20652228593826294" green="0.1679999977350235" blue="0.6000000238418579" />
-                           </color>
-                        </InnerShadow>
-                     </effect>
-                     <image>
-                        <Image url="@profile_empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <VBox prefHeight="535.0" prefWidth="551.0">
-               <children>
-                  <TextArea fx:id="outputField" prefHeight="184.0" prefWidth="514.0" />
-                  <TableView prefHeight="351.0" prefWidth="514.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
-               </children>
-            </VBox>
-            <VBox prefHeight="535.0" prefWidth="241.0" spacing="10.0">
-               <children>
-                  <TextField fx:id="nameField" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="272.0" promptText="Name" />
-                  <TextField fx:id="majorField" promptText="Major" />
-                  <TextField fx:id="ageField" promptText="Age" />
-                  <HBox prefHeight="32.0" prefWidth="465.0">
-                     <children>
-                        <Button fx:id="readButton" mnemonicParsing="false" onAction="#readRecord" prefHeight="25.0" prefWidth="123.0" text="Read" textAlignment="CENTER">
-                           <HBox.margin>
-                              <Insets left="20.0" right="20.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Button fx:id="writeButton" mnemonicParsing="false" onAction="#addRecord" prefHeight="25.0" prefWidth="128.0" text="Write" textAlignment="CENTER">
-                           <HBox.margin>
-                              <Insets left="20.0" right="20.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <Button fx:id="switchroot" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="25.0" prefWidth="283.0" text="Switch" textAlignment="CENTER" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
-         </children>
-      </HBox>
-   </children>
-   <opaqueInsets>
-      <Insets />
-   </opaqueInsets>
-</AnchorPane>
+<HBox stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc325_firebase_webview_auth.view.AccessFBView">
+
+    <children>
+        <AnchorPane fx:id="anchorpaneLeft">
+            <children>
+                <ImageView fitHeight="154.0" fitWidth="172.0" layoutX="13.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@pfpavatar.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="anchorPaneMiddle">
+            <children>
+                <MenuBar layoutY="25.0" prefHeight="25.0" prefWidth="513.0" style="-fx-background-color: #aaaaaa;">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="ID" />
+                        <Menu mnemonicParsing="false" text="First Name">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Last Name">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Department">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Action 1" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Major">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Action 1" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Email">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Action 1" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <MenuBar layoutX="-280.0" layoutY="640.0" prefHeight="25.0" prefWidth="793.0" style="-fx-background-color: #aaaaaa;" />
+                <MenuBar layoutX="-280.0" prefHeight="25.0" prefWidth="793.0" style="-fx-background-color: #971a1a;">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Close" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Theme">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Action 1" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <Label layoutX="189.0" layoutY="397.0" text="No content in table" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="anchorPaneRight">
+            <children>
+                <TextField fx:id="firstName" layoutX="39.0" layoutY="27.0" promptText="First Name" />
+                <TextField fx:id="lastName" layoutX="39.0" layoutY="58.0" promptText="Last Name" />
+                <TextField fx:id="department" layoutX="39.0" layoutY="88.0" promptText="Department" />
+                <TextField fx:id="major" layoutX="39.0" layoutY="117.0" promptText="Major" />
+                <TextField fx:id="email" layoutX="39.0" layoutY="148.0" promptText="Email" />
+                <TextField layoutX="39.0" layoutY="178.0" promptText="imageURL" />
+                <MenuBar layoutY="640.0" prefHeight="25.0" prefWidth="331.0" style="-fx-background-color: #aaaaaa;" />
+                <MenuBar prefHeight="25.0" prefWidth="331.0" style="-fx-background-color: #971a1a;" />
+            <Button layoutX="30.0" layoutY="390.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="168.0" text="Clear" />
+            <Button fx:id="writeButton" layoutX="30.0" layoutY="450.0" mnemonicParsing="false" onAction="#addRecord" prefHeight="46.0" prefWidth="168.0" text="Add" />
+            <Button layoutX="30.0" layoutY="510.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="168.0" text="Delete" />
+            <Button layoutX="30.0" layoutY="570.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="168.0" text="Edit" />
+            </children>
+        </AnchorPane>
+    </children>
+</HBox>

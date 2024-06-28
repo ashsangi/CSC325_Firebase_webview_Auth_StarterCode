@@ -29,11 +29,15 @@ public class AccessFBView {
 
 
      @FXML
-    private TextField nameField;
+    private TextField firstName;
     @FXML
-    private TextField majorField;
+    private TextField lastName;
     @FXML
-    private TextField ageField;
+    private TextField major;
+    @FXML
+    private TextField department;
+    @FXML
+    private TextField email;
     @FXML
     private Button writeButton;
     @FXML
@@ -50,8 +54,11 @@ public class AccessFBView {
     void initialize() {
 
         AccessDataViewModel accessDataViewModel = new AccessDataViewModel();
-        nameField.textProperty().bindBidirectional(accessDataViewModel.userNameProperty());
-        majorField.textProperty().bindBidirectional(accessDataViewModel.userMajorProperty());
+        firstName.textProperty().bindBidirectional(accessDataViewModel.userNameProperty());
+        lastName.textProperty().bindBidirectional(accessDataViewModel.lastNameProperty());
+        major.textProperty().bindBidirectional(accessDataViewModel.userMajorProperty());
+        department.textProperty().bindBidirectional(accessDataViewModel.departmentProperty());
+        email.textProperty().bindBidirectional(accessDataViewModel.emailProperty());
         writeButton.disableProperty().bind(accessDataViewModel.isWritePossibleProperty().not());
     }
 
@@ -71,18 +78,20 @@ public class AccessFBView {
     }
 
      @FXML
-    private void switchToSecondary() throws IOException {
+   /* private void switchToSecondary() throws IOException {
         App.setRoot("/files/WebContainer.fxml");
-    }
+    }*/
 
     public void addData() {
 
         DocumentReference docRef = App.fstore.collection("References").document(UUID.randomUUID().toString());
 
         Map<String, Object> data = new HashMap<>();
-        data.put("Name", nameField.getText());
-        data.put("Major", majorField.getText());
-        data.put("Age", Integer.parseInt(ageField.getText()));
+        data.put("First Name", firstName.getText());
+        data.put("Last Name", lastName.getText());
+        data.put("Major", major.getText());
+        data.put("Department", department.getText());
+        data.put("Email", email.getText());
         //asynchronously write data
         ApiFuture<WriteResult> result = docRef.set(data);
     }
